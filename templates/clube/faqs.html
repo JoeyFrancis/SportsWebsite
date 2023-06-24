@@ -1,0 +1,60 @@
+{% extends 'clube/index.html' %}
+
+{% block titulo %}
+    DIAM FC - FAQ's
+{% endblock %}
+
+{% block conteudo %}
+    <section>
+        <h2 class="title">FAQ's</h2>
+        <div class="half-image">
+            {% load static %}
+        </div>
+        <div class="questoes">
+            <div class="questions">
+                <div class="question">
+                    <h3>Como posso tornar-me sócio do DIAM FC ?</h3>
+
+                    <span class="plus">+</span>
+                </div>
+                <div class="answer">
+                    <p>
+                        É muito simples, basta aceder à aba "Sócio" ou clicar aqui (INSERIR LINK).
+                        Insira os seus dados, regularize as cotas e torne-se sócio
+                        do melhor clube de futebol do país.
+                    </p>
+                </div>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <h3>O preço dos bilhetes varia de sócio para não-sócio?</h3>
+
+                    <span class="plus">+</span>
+                </div>
+                <div class="answer">
+                    <p>
+                        Sim! Os nossos sócios têm direito a um preço especial. Os sócios do DIAM FC
+                        têm também direito a ofertas exclusivas na loja e em datas especiais, ofertas
+                        de bilhetes.
+                    </p>
+
+                    <img src="{% static 'clube/images/diamFC.png' %}" alt="Logo" style="width: 200px">
+                </div>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <h3>Preciso de ser sócio para comprar na bilheteira ou na loja ?</h3>
+
+                    <span class="plus">+</span>
+                </div>
+                <div class="answer">
+                    <p>
+                        Não! Para comprar produtos oficiais do DIAM FC ou bilhetes para os nossos
+                        jogos, não é obrigatório ser sócio. Simplesmente não pode beneficiar das
+                        ofertas exclusivas para sócios.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

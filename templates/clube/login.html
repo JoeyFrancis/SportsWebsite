@@ -1,0 +1,21 @@
+{% extends './index.html' %}
+
+{% block conteudo %}
+<div class="centered-container">
+    <div class="login_container">
+
+        <form action="{% url 'fazlogin' %}" method="post">
+            {% csrf_token %}
+            <p>Username:</p>
+            <input type="text" name="username" autofocus>
+            <p>Password:</p>
+            <input type="password" name="password">
+            <br>
+            <input type="submit" value="Login">
+            <br>
+            <input type="submit" formaction="{% url 'registo' %}" value="Novo Utilizador">
+        </form>
+        <br><br>
+    </div>
+</div>
+{% endblock %}

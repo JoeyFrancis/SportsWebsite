@@ -1,0 +1,35 @@
+{% extends './index.html' %}
+
+{% block conteudo %}
+    <div class="centered-container">
+        <div class="register_container">
+            <h1>Registo de um novo Utilizador</h1>
+            <form id="registo-form" action="{% url 'registo' %}" method="post" style="text-align: center">
+                {% csrf_token %}
+                <p>Primeiro Nome:
+                    <input type="text" name="first_name" autofocus required>
+                </p>
+                <p>Último Nome:
+                    <input type="text" name="last_name" autofocus required>
+                </p>
+                <p>Username:
+                    <input type="text" name="username" autofocus required>
+                </p>
+                <p>Password:
+                    <input type="password" name="password" required>
+                </p>
+                <p>Email:
+                    <input type="email" name="email" required>
+                </p>
+                <p>Telemovel:
+                    <input type="tel" name="telemovel" required>
+                </p>
+                <p>Data Nascimento:
+                    <input type="date" name="data_nascimento" required>
+                </p>
+
+                <input type="submit" value="Registar" id="botao_submit">
+            </form>
+        </div>
+    </div>
+{% endblock %}

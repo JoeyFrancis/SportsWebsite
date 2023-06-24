@@ -1,0 +1,21 @@
+{% extends './index.html' %}
+
+{% block conteudo %}
+
+    <div class="centered-container">
+        <div class="info_container">
+            <h1>Dados pessoais do user {{ request.user.username }}</h1>
+            <p>Primeiro nome: {{ request.user.first_name }}</p>
+            <p>Último nome: {{ request.user.last_name }}</p>
+            <p>Email: {{ request.user.email }}</p>
+            <p>Telemóvel: {{ request.user.utilizador.telemovel }}</p>
+            <p>Data de nascimento: {{ request.user.utilizador.data_nascimento }}</p>
+            <p>Imagem de Perfil:</p>
+            {% if request.user.utilizador %}
+                <img src="{{request.user.utilizador.foto}}" width="150px">
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
+

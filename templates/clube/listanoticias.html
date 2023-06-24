@@ -1,0 +1,30 @@
+{% extends './index.html' %}
+
+{% block conteudo %}
+    <div class="blog-section">
+        <div class="section-content blog">
+            <div class="title">
+                <h2>Notícias</h2>
+                <p>Aqui podes estar a par de todas as notícias do DIAM FC</p>
+                <button onclick="window.location.href='{% url 'novanoticia' %}'">Adicionar Notícia</button>
+            </div>
+            <div class="cards">
+                {% for noticia in noticias %}
+                    <div class="card">
+                        {% load static %}
+                        <div class="image-section">
+                            <a href="{% url 'detalhenoticia' noticia.id %}">
+                                <img src="{% static noticia.imagem %}">
+                            </a>
+                        </div>
+                        <div class="article">
+                            <h4><a href="{% url 'detalhenoticia' noticia.id %}">{{ noticia.titulo }}</a></h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

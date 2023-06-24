@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block titulo %}
+            DIAM FC - Homepage
+        {% endblock %}
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'clube/css/styles.css' %}?{% now "U" %}">
+    <script src="{% static 'clube/js/MyScripts.js' %}?{% now "U" %}"> </script>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        Os nossos parceiros:
+        <img src="{% static 'clube/images/sporttv.png' %}" style="width: 50px; margin-left: 20px">
+        <img src="{% static 'clube/images/betclic.png' %}" style="width: 50px; margin-left: 20px">
+        <img src="{% static 'clube/images/nike.png' %}" style="width: 50px; margin-left: 20px">
+        <img src="{% static 'clube/images/agriloja.png' %}" style="width: 50px; margin-left: 20px">
+    </div>
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'clube/images/diamFC.png' %}" alt="Logo">
+        </a>
+    </div>
+    <div class="botoes">
+        <div class="botao">
+            {% if request.user.is_authenticated %}
+                <button onclick="window.location.href='{% url 'visualizainfo' %}'">Perfil</button>
+                <button onclick="window.location.href='{% url 'fazlogout' %}'">Logout</button>
+            {% else %}
+                <button onclick="window.location.href='{% url 'fazlogin' %}'">Login</button>
+            {% endif %}
+        </div>
+        <div class="hamb-container">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <ul class="menu">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'historia' %}">A nossa História</a></li>
+        <li><a href="#">Modalidades</a></li>
+        <li><a href="{% url 'loja' %}">Loja</a></li>
+        <li><a href="{% url 'proximosjogos' %}">Calendário</a></li>
+        <li><a href="{% url 'listanoticias' %}">Notícias</a></li>
+        <li><a href="{% url 'faqs' %}">FAQ's</a></li>
+    </ul>
+</header>
+{% block conteudo %}
+
+    <div class="slider">
+        <div class="slides">
+
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+            <div class="slide first">
+                <img src="{% static 'clube/images/campo.jpg' %}" alt="Imagem1">
+            </div>
+            <div class="slide">
+                <img src="{% static 'clube/images/azeitona.jpg' %}" alt="Imagem2">
+            </div>
+            <div class="slide">
+                <img src="{% static 'clube/images/oliveira.jpg' %}" alt="Imagem3">
+            </div>
+            <div class="slide">
+                <img src="{% static 'clube/images/burro.jpg' %}" alt="Imagem4">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+        </div>
+
+    </div>
+    </body>
+{% endblock %}
+</html>

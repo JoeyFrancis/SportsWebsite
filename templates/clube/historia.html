@@ -1,0 +1,63 @@
+{% extends 'clube/index.html' %}
+
+{% block titulo %}
+    DIAM FC - História
+{% endblock %}
+
+{% block conteudo %}
+    <section>
+        <h2 class="title">A nossa História</h2>
+        <div class="half-image">
+            {% load static %}
+        </div>
+        <div class="questoes">
+            <div class="questions">
+                <div class="question">
+                    <h3>Quem somos ?</h3>
+
+                    <span class="plus">+</span>
+                </div>
+                <div class="answer">
+                    <p>
+                        DIAM Futebol Clube. Somos um clube com história, fundado em 2023 por
+                        3 estudantes universitários, com o objetivo de trazer o futebol no
+                        seu estado mais puro para o ambiente universitário.
+                    </p>
+                </div>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <h3>O nosso símbolo</h3>
+
+                    <span class="plus">+</span>
+                </div>
+                <div class="answer">
+                    <p>
+                        É a nossa identidade, aquilo que nos define. Contém as nossas cores
+                        e ao centro a representação de toda uma classe trabalhadora,
+                        discriminada por anos sem fim, os Engenheiros de Telecomunicações
+                        e Informática!
+                    </p>
+
+                    <img src="{% static 'clube/images/diamFC.png' %}" alt="Logo" style="width: 200px">
+                </div>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <h3>Quais os nossos objetivos ?</h3>
+
+                    <span class="plus">+</span>
+                </div>
+                <div class="answer">
+                    <p>
+                        Somos um clube com ambição! Os nossos objetivos passam por, de forma
+                        sustentada, alcançar os mais altos voos no que toca ao desporto
+                        nacional. Sempre apoiados na formação, não só de jogadores, como de
+                        homens e mulheres que defendem o nosso clube com tudo o que está ao
+                        seu alcance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

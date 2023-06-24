@@ -1,0 +1,110 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos do cabeçalho */
+header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+}
+
+.navbar{
+  background-color: #ffffff;
+}
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+/* Estilos da página de produtos */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  flex: 0 0 33.33%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.product-name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.product-price {
+  margin-top: 5px;
+}
+
+/* Estilos do carrinho de compras */
+.cart-container {
+  padding: 20px;
+}
+
+.cart-container h1 {
+  margin-bottom: 20px;
+}
+
+.cart-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-container th,
+.cart-container td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.cart-container th {
+  background-color: #f2f2f2;
+}
+
+.cart-container td a {
+  color: #ff0000;
+}
+
+.cart-total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.checkout-container {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Estilos do rodapé */
+footer {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+{% extends './index.html' %}
+
+{% block conteudo %}
+    <div class="titulo">
+        <h1>Próximos Jogos do DIAM FC</h1>
+    </div>
+    <div class="geral">
+        {% for jogo in jogos %}
+            {% load static %}
+            <div class="calendar-item-header">
+                <div class="calendar-date">{{ jogo.data }}</div>
+                <div class="calendar-match-location">{{ jogo.estadio }}</div>
+                <div class="calendar-live-channels">
+                    <img src="{% static 'clube/images/sporttv.png' %}" style="width: 50px;">
+                </div>
+            </div>
+            <div class="calendar-item-data">
+                <div class="calendar-competition">Primeira Liga 22/23</div>
+                <div class="calendar-match-info">
+
+                    <div class="calendar-item-team home-team">
+                        <img src="{% static 'clube/images/diamFC.png' %}">
+                        <div class="calendar-item-team-name">Diam FC </div>
+                    </div>
+                    <div class="calendar-info-center">
+                        <div class="calendar-match-hour set">{{ jogo.hora }}</div>
+                    </div>
+                    <div class="calendar-item-team away-team">
+                        <img src="{% static jogo.clube.simbolo %}">
+                        <div class="calendar-item-team-name">{{ jogo.clube.nome }}</div>
+                    </div>
+                </div>
+            </div>
+            <form method="POST" action="{% url 'comprar_bilhete' jogo.id %}">
+    {% csrf_token %}
+    <input type="number" name="quantity" value="1" min="1">
+    <button type="submit">Comprar Bilhete(s)</button>
+</form>
+        {% endfor %}
+    </div>
+    <button onclick="window.location.href='{% url 'adicionarjogo' %}'">Adicionar Jogo</button>
+{% endblock %}
